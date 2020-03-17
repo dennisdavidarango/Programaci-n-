@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Listas</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:growl id="grwlErrores"/>
+            <p:panel style="background-color:#669999;" header="Lista Infantes">
+                <p:outputLabel value="Name" id="Name"
+                               for="txtNumero" style="color: black;"/>
+                <h:inputText rendered="true"/>
+                 <br/>
+                 <br/>
+                 <p:outputLabel value="Years" id="Years" style="color: black;"
+                               for="txtNumero"/>
+                 <p:spinner required="true" min="1" max="100" id="txtNumero"
+                           value="Choose your years"/>
+                <br/>
+                <br/>
+                <h:form>
+                     <p:growl id="msgs" />
+                     <h:panelGrid columns="2" style="margin-bottom:10px; color: black;" cellpadding="5">
+                     <h:outputText  value="Beginning: " />
+                     <p:selectBooleanButton onLabel="Yes" offLabel="No" style="width:60px" />                
+                     </h:panelGrid>
+                     <p:commandButton id="submit" 
+                                      value="Submit"
+                                      update="display" 
+                                      icon="pi pi-check" 
+                                      oncomplete="PF('dlg').show()" />
+                     <p:dialog id="dialog"
+                               header="Successful Submit" 
+                               modal="true" 
+                               resizable="false" 
+                               showEffect="fade" 
+                               widgetVar="dlg">
+                           <h:panelGrid columns="1" id="display">
+                                 <h:outputText value="Name: " />
+                                 <h:outputText value="Years:" />
+                                 <h:outputText value="Beginning:" />
+                          </h:panelGrid>
+                    </p:dialog>
+                </h:form>           
+                <br/>
+   
+               </p:panel>
+                    </h:form>
+                <h:form>
+                   <p:panel style="background-color:#669999;">
+                     <p:outputLabel value="Code  "
+                                    style="color: black;"  />
+                      <p:spinner required="true" min="1" max="100"/>
+                      <br/>
+                      <br/>
+                         <p:outputLabel value="Name  " style="color: black;"/>
+                         <h:inputText rendered="true" />
+                     <br/>
+                     <br/>
+                     <p:button  icon="pi pi-angle-left" 
+                                style="margin-right:20px;" 
+                                title="Icon Only"
+                                disabled="true">
+                     </p:button>   
+                      <p:button  icon="pi pi-star" 
+                                style="margin-right:20px;" 
+                                title="Icon Only"
+                                disabled="true">
+                     </p:button>     
+                      <p:button  icon="pi pi-star" 
+                                style="margin-right:20px;" 
+                                title="Icon Only"
+                                disabled="true">
+                     </p:button>     
+                      <p:button  icon="pi pi-star" 
+                                style="margin-right:20px;" 
+                                title="Icon Only"
+                                disabled="true">
+                     </p:button>     
+                   
+                   </p:panel>
+               </h:form>
+    </h:body> 
+</html>
+
